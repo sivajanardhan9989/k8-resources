@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Pod 
 metadata:
-  name: multi-container
+  name: labels 
   labels:
     project: roboshop
     environment: dev
@@ -10,4 +10,4 @@ spec:
   containers:
   - name: nginx
     image: nginx
-     
+
