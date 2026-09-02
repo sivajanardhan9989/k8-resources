@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: nginx-config-map
+data:
+  project: roboshop
+  course: kubernetes
+  trainer: sivakumar
+  
