@@ -3,8 +3,8 @@ kind: Service
 metadata:
  name: nginx-np
  labels:
-  project: roboshop
-  environment: dev
+    project: roboshop
+    environment: dev
 spec:
   type: NodePort
   # Service uses the below labels to select the pods
