@@ -1,5 +1,5 @@
 apiVersion: apps/v1 
-kind: Replicaset
+kind: ReplicaSet
 metadata:
   name: frontend
   labels:
@@ -11,10 +11,10 @@ spec:
   replicas: 10
   # replicaset uses these labels to match pods
   selector:
-  matchLabels:
-    project: roboshop
-    tier: frontend
-    component: frontend   
+    matchLabels:
+      project: roboshop
+      tier: frontend
+      component: frontend   
     # Pod definition
   template:
     metadata:
