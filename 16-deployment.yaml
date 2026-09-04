@@ -1,0 +1,61 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata: 
+  name: frontend
+  labels:
+    project: roboshop
+    tier: frontend
+    component: frontend
+spec: 
+  replicas: 10 
+# replicaset uses these labels to match pods
+  selector:
+    matchLabels:
+      project: roboshop
+      tier: frontend
+      component: frontend
+# pod definition    
+  template:
+    metadata: 
+      labels:
+        project: roboshop
+        tier: frontend
+        component: frontend
+        purpose: deployment
+    spec:
+      containers:
+      - name: nginx
+        image: nginx:trixie-otel  
+
+...
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: nginx
+  # servicer labels
+  labels:
+    project: roboshop
+    tier: frontend
+    component: frontend
+    purpose: deployment
+spec:
+  # Service uses the below labels to select the pods
+  selector:
+    project: roboshop
+    tier: frontend
+    component: frontend
+    purpose: deployment
+  ports:
+    - protocol: TCP
+      port: 80 # service port
+      targetPort: 80 # container port
+
+      
+
+
+
+
+
+
+
